@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Song+Myung&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("../images/paisaje.webp") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Song Myung', serif;
+}
+
+form {
+    background-color: #95d1ff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 3px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+input[type="email"],
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+    height: 50px;
+}
+
+button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    background-color: #f8f8f8;
+    border: none;
+}
+
+/* Estilos para mejorar la apariencia del input de archivo */
+.input-file-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-file-trigger {
+    display: block;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-file {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 10px 0;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-return {
+    margin-top: 10px;
+}
+
+
+@media (max-width: 700px) {
+    body {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    form {
+        text-align: center;
+    }
+}
