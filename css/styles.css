@@ -101,6 +101,15 @@ input[type="file"] {
 }
 
 
+#cuerpo-mensaje {
+    width: 80%;
+}
+
+#cuerpo-mensaje h1 {
+    text-align: center;
+}
+
+
 @media (max-width: 700px) {
     body {
         width: 90%;
