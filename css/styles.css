@@ -70,7 +70,7 @@ input[type="file"] {
     border: none;
 }
 
-/* Estilos para mejorar la apariencia del input de archivo */
+
 .input-file-container {
     position: relative;
     width: 100%;
@@ -102,12 +102,18 @@ input[type="file"] {
 
 
 #cuerpo-mensaje {
-    width: 80%;
-}
-
-#cuerpo-mensaje h1 {
+    width: 40%;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: greenyellow;
     text-align: center;
 }
+
+#cuerpo-mensaje a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
 
 
 @media (max-width: 700px) {

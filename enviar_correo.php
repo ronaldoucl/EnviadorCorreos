@@ -9,7 +9,6 @@ require 'vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 try {
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->SMTPDebug = 0;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -21,19 +20,10 @@ try {
 
     $mail->setFrom('proyectoprograronaldo@gmail.com', 'Ronaldo Campos');
     $mail->addAddress($_POST['correo']);
-    //$mail->addAddress('proyectoprograronaldo@gmail.com', 'Ronaldo Campos');
-    //$mail->addCC('Ronaldocl9lda@gmail.com');
 
-    //$mail->addAttachment('./docs/eren.jpeg', 'Imagen de Eren');
-    /*if (isset($_FILES['archivo']) &&
-    $_FILES['archivo']['error'] == UPLOAD_ERR_OK) 
-    {
-    $mail->addAttachment($_FILES['archivo']['tmp_name'], $_FILES['archivo']['name']);
-    }*/
-    if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] == UPLOAD_ERR_OK) {
+    if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] === UPLOAD_ERR_OK) {
         $mail->addAttachment($_FILES['archivo']['tmp_name'], $_FILES['archivo']['name']);
-    } elseif (isset($_FILES['archivo'])) {
-        // Posiblemente manejar el error de carga aquí
+    } elseif (isset($_FILES['archivo']) && $_FILES['archivo']['error'] !== UPLOAD_ERR_NO_FILE) {
         die('Error al cargar el archivo: ' . $_FILES['archivo']['error']);
     }
 
@@ -42,7 +32,6 @@ try {
     $mail->Body = '<p>'.$_POST['mensaje'].'</p>';
     $mail->send();
     header('Location: mensaje-enviado.html');
-    exit;
 } catch(Exception $e) {
     echo 'Mensaje '.$mail->ErrorInfo;
 }
